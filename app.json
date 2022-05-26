@@ -1,11 +1,11 @@
 {
-	"name": "Bottus",
+	"name": "Pixy",
 	"description": " Whatsapp bot.",
 	"keywords": [
 		"whatsapp",
 		"bot"
 	],
-	"repository": "https://github.com/lyfe0010/whatsapp-bot-md",
+	"repository": "https://github.com/FantoX001/Pixy-Bot-MD",
 	"stack": "container",
 	"env": {
 		"ALWAYS_ONLINE": {
