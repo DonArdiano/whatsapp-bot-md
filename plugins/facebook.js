@@ -9,7 +9,7 @@ bot(
 	},
 	async (message, match) => {
 		match = isUrl(match || message.reply_message.text)
-		if (!match) return await message.sendMessage('_Example : fb url_')
+		if (!match) return await message.sendMessage('Provive URL Example : fb url_')
 		const result = await facebook(match)
 		if (!result.length)
 			return await message.sendMessage('*Not found*', {
