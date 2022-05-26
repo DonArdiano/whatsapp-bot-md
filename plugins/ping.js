@@ -4,10 +4,10 @@ bot(
 	{ pattern: 'ping ?(.*)', fromMe: true, desc: 'To check ping' },
 	async (message, match) => {
 		const start = new Date().getTime()
-		await message.sendMessage('```Ping!```')
+		await message.sendMessage('```Testing My Ping...```')
 		const end = new Date().getTime()
 		return await message.sendMessage(
-			'*Pong!*\n ```' + (end - start) + '``` *ms*'
+			'*My Current Ping is:*\n ```' + (end - start) + '``` *ms*'
 		)
 	}
 )
