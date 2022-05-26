@@ -24,15 +24,15 @@ bot(
 			message.mention[0] ||
 			message.reply_message.jid ||
 			(match == 'all' && match)
-		if (!user) return await message.sendMessage(`_Give me a user_`)
+		if (!user) return await message.sendMessage(`Give me a user`)
 		const isUserAdmin = user != 'all' && (await isAdmin(participants, user))
-		if (isUserAdmin) return await message.sendMessage(`_User is admin._`)
+		if (isUserAdmin) return await message.sendMessage(`User is an Admin so i will not remove him.`)
 		if (user == 'all') {
 			user = participants
 				.filter((member) => !member.admin == true)
 				.map(({ id }) => id)
 			await message.sendMessage(
-				`_kicking everyone(${user.length})_\n*Restart bot if u wanna stop.*`
+				`kicking everyone(${user.length})\n*Restart bot if u wanna stop.*`
 			)
 			await sleep(10 * 1000)
 		}
@@ -77,7 +77,7 @@ bot(
 		const isImAdmin = await isAdmin(participants, message.client.user.jid)
 		if (!isImAdmin) return await message.sendMessage(`_I'm not admin._`)
 		const user = message.mention[0] || message.reply_message.jid
-		if (!user) return await message.sendMessage(`_Give me a user._`)
+		if (!user) return await message.sendMessage(`Give me a user.`)
 		const isUserAdmin = await isAdmin(participants, user)
 		if (isUserAdmin)
 			return await message.sendMessage(`_User is already admin._`)
@@ -101,7 +101,7 @@ bot(
 		if (!user) return await message.sendMessage(`_Give me a user._`)
 		const isUserAdmin = await isAdmin(participants, user)
 		if (!isUserAdmin)
-			return await message.sendMessage(`_User is not an admin._`)
+			return await message.sendMessage(`User is not an admin.`)
 		return await message.Demote(user)
 	}
 )
@@ -173,7 +173,7 @@ bot(
 		const wa = /chat.whatsapp.com\/([0-9A-Za-z]{20,24})/
 		const [_, code] = match.match(wa) || []
 		if (!code)
-			return await message.sendMessage(`_Give me a Group invite link._`)
+			return await message.sendMessage(`Give me a Group invite link.`)
 		const res = await message.infoInvite(code)
 		if (res.size > 256) return await message.sendMessage('*Group full!*')
 		await message.acceptInvite(code)
@@ -192,7 +192,7 @@ bot(
 	async (message, match) => {
 		const participants = await message.groupMetadata(message.jid)
 		const im = await isAdmin(participants, message.client.user.jid)
-		if (!im) return await message.sendMessage(`_I'm not admin._`)
+		if (!im) return await message.sendMessage(`I'm not an admin.`)
 		await message.revokeInvite(message.jid)
 	}
 )
