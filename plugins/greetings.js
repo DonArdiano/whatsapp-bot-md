@@ -45,11 +45,11 @@ bot(
 				return await message.sendMessage('*Example : welcome Hi #mention*')
 			await enableGreetings(message.jid, 'welcome', match)
 			return await message.sendMessage(
-				`_Welcome  ${match == 'on' ? 'Enabled' : 'Disabled'}_`
+				`Welcome  ${match == 'on' ? 'Enabled' : 'Disabled'}`
 			)
 		}
 		if (match === 'delete') {
-			await message.sendMessage('_Welcome deleted_')
+			await message.sendMessage('New Member deleted')
 			clearGreetings(message.jid, 'welcome')
 			return await deleteMessage(message.jid, 'welcome')
 		}
