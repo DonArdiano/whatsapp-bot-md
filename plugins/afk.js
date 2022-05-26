@@ -16,7 +16,7 @@ bot(
 	async (message, match) => {
 		if (!global.AFK.isAfk && !match)
 			return await message.sendMessage(
-				'Example : My owner is AFK\n last seen before #lastseen\nTo off afk send a msg again.'
+				'Example : My owner is Offline\n last seen before #lastseen\nTo turn off afk send a msg again.'
 			)
 		if (!global.AFK.isAfk) {
 			if (match) global.AFK.reason = match
