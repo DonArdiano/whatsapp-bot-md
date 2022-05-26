@@ -36,7 +36,7 @@
 		"STICKER_PACKNAME": {
 			"description": "sticker pack info",
 			"required": true,
-			"value": "❤️,LyFE"
+			"value": "Pixy Bot,Fantox"
 		},
 		"HEROKU_APP_NAME": {
 			"description": "Heroku app name, same as above entered",
